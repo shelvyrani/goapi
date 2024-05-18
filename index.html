@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #8fb8e4;
+            margin: 5px;
+          }
+          
+          .button:hover {
+            background-color: #0056b3;
+          }
+    </style>
+</head>
+<body>
+    <div id="button"></div>
+    <script>
+        const getProvinsi = fetch("https://api.goapi.io/regional/kota?api_key=4dce0431-b74c-5e37-31a3-042d0fb9")
+        .then(res => {
+            return res.json();
+        }).then((hasil) => {
+            console.log(hasil.data);
+        })
+
+        function createButton(Wilayah) {
+            const buttonContainer = document.getElementById('button');
+            const button = document.createElement('button');
+            button.textContent = name;
+            button.className = 'button';
+            buttonContainer.appendChild(button);
+          }
+    </script>
+</body>
+</html>
